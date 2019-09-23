@@ -5,5 +5,13 @@ export class Music {
 
   constructor(public title: string,
               public artist: string,
-              public releaseDate: string){}
+              public releaseDate: string){
+              }
+
+  setAlbum(album: string){
+    this.album = album;
+  }
+  getAlbum(){
+    return this.album;
+  }
 }

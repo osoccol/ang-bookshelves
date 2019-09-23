@@ -16,6 +16,7 @@ export class MusicFormComponent implements OnInit {
   fileUrl: string;
   fileUploaded = false;
   releaseDate = this.table(1950, 2020);
+  albumAdding = false;
   
   table(a: number, b: number){
     let array = [];
@@ -37,15 +38,22 @@ export class MusicFormComponent implements OnInit {
     this.musicForm = this.formBuilder.group({
       title: ['', Validators.required],
       artist: ['', Validators.required],
-      releaseDate: ['', Validators.required]
+      releaseDate: ['', Validators.required],
+      album: [],
     });
+  }
+
+  addAlbum(bool: boolean){
+    this.albumAdding = bool;
   }
 
   onSaveMusic() {
     const title = this.musicForm.get('title').value;
     const artist = this.musicForm.get('artist').value;
     const releaseDate = this.musicForm.get('releaseDate').value;
+    const album = this.musicForm.get('album').value;
     const newMusic = new Music(title, artist, releaseDate);
+    newMusic.setAlbum(album);
     if(this.fileUrl && this.fileUrl !== '') {
       newMusic.photo = this.fileUrl;
     }

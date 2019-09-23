@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-xs-12">
-    <img style="width: 200px;" *ngIf="music.photo" [src]="music.photo" />
+    <div id="albumImage" *ngIf="music.photo">
+      <img style="width: 300px;"  [src]="music.photo" />
+      <h2>Album: {{ music.album}}</h2>
+    </div>
     <!-- Ajouter un lecteur audio! -->
-    <!-- Ajouter un album ainsi qu'une image -->
     <h1>{{ music.title }}</h1>
     <h3>{{ music.artist }}</h3>
     <h4>Date de sortie: {{ music.releaseDate }}</h4>
