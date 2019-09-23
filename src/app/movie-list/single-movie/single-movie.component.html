@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img style="width: 200px;" *ngIf="movie.photo" [src]="movie.photo" />
+    <div class="resume" *ngIf="movie.resume" (mouseenter)="onDisplayButton(1)" (mouseleave)="onDisplayButton(0)">
+        <textarea cols="30" [disabled]="!modified">{{ movie.resume }}</textarea>
+        <li class="item list-item" *ngIf="!modified">
+          <button class="btn btn-default" (click)="onResumeEdit($event)" id="editButton" [ngStyle]="{'display': 'none'}">Modifier</button>
+        </li>
+        <li class="item list-item" *ngIf="modified">
+          <button class="btn btn-success" (click)="onSaveEdit($event)" id="saveButton">Sauvegarder</button>
+          <button class="btn btn-primary" (click)="onCancel($event)" id="cancelButton">Annuler</button>
+        </li>
+    </div>
+    <div class="noresume" *ngIf="!movie.resume">
+      <button class="btn btn-default" (click)="onResumeEdit($event)" id="editButton">Ajouter un résumé</button>
+    </div>
+    <h1>{{ movie.title }}</h1>
+    <h3>{{ movie.director }}</h3>
+    <h4>Date de sortie: {{ movie.releaseDate }}</h4>
+    <button class="btn btn-default" (click)="onBack()">Retour</button>
+  </div>
+</div>

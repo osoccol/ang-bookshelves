@@ -1,0 +1,46 @@
+.resume {
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.3em;
+  float: right;
+  width: 60%;
+  height: 300px;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px grey;
+}
+
+.noresume {
+  position: relative;
+  float: right;
+  margin-right: 25%;
+  margin-top: 150px;
+  padding: 5px;
+}
+
+textarea {
+  height: 250px;
+  width: 100%;
+  border: none;
+  resize: none;
+  background-color: white;
+}
+
+#editButton, #saveButton {
+  float: right;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#cancelButton {
+  float: left;
+  position: absolute;
+  bottom: 5px;
+}
+
+li {
+  list-style: none;
+}

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img style="width: 200px;" *ngIf="book.photo" [src]="book.photo" />
+    <div class="resume" *ngIf="book.resume" (mouseenter)="onDisplayButton(1)" (mouseleave)="onDisplayButton(0)">
+        <textarea cols="30" [disabled]="!modified">{{ book.resume }}</textarea>
+        <li class="item list-item" *ngIf="!modified">
+          <button class="btn btn-default" (click)="onResumeEdit($event)" id="editButton" [ngStyle]="{'display': 'none'}">Modifier</button>
+        </li>
+        <li class="item list-item" *ngIf="modified">
+          <button class="btn btn-success" (click)="onSaveEdit($event)" id="saveButton">Sauvegarder</button>
+          <button class="btn btn-primary" (click)="onCancel($event)" id="cancelButton">Annuler</button>
+        </li>
+    </div>
+    <div class="noresume" *ngIf="!book.resume">
+      <button class="btn btn-default" (click)="onResumeEdit($event)" id="editButton">Ajouter un résumé</button>
+    </div>
+    <h1>{{ book.title }}</h1>
+    <h3>{{ book.author }}</h3>
+    <button class="btn btn-default" (click)="onBack()">Retour</button>
+  </div>
+</div>
