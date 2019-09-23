@@ -2,6 +2,19 @@
   <div class="col-xs-12">
     <img style="width: 60%;" *ngIf="paint.photo" [src]="paint.photo" />
     <h1>{{ paint.title }}</h1>
+    <div class="resume" *ngIf="paint.resume" (mouseenter)="onDisplayButton(1)" (mouseleave)="onDisplayButton(0)">
+      <textarea cols="30" [disabled]="!modified">{{ paint.resume }}</textarea>
+      <li class="item list-item" *ngIf="!modified">
+        <button class="btn btn-default" (click)="onResumeEdit($event)" id="editButton" [ngStyle]="{'display': 'none'}">Modifier</button>
+      </li>
+      <li class="item list-item" *ngIf="modified">
+        <button class="btn btn-success" (click)="onSaveEdit($event)" id="saveButton">Sauvegarder</button>
+        <button class="btn btn-primary" (click)="onCancel($event)" id="cancelButton">Annuler</button>
+      </li>
+    </div>
+    <div class="noresume" *ngIf="!paint.resume">
+      <button class="btn btn-default" (click)="onResumeEdit($event)" id="noresumeEditButton">Ajouter un résumé</button>
+    </div>
     <h3>{{ paint.artist }}</h3>
     <h4>Date: {{ paint.releaseDate }}</h4>
     <button class="btn btn-default" (click)="onBack()">Retour</button>
