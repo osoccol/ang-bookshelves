@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <img style="width: 60%;" *ngIf="paint.photo" [src]="paint.photo" />
+    <img style="width: 500px;" *ngIf="paint.photo" [src]="paint.photo" />
     <h1>{{ paint.title }}</h1>
     <div class="resume" *ngIf="paint.resume" (mouseenter)="onDisplayButton(1)" (mouseleave)="onDisplayButton(0)">
       <textarea cols="30" [disabled]="!modified">{{ paint.resume }}</textarea>

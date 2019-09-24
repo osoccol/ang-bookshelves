@@ -8,7 +8,7 @@ import { Paint } from '../models/Paint.model';
 @Component({
   selector: 'app-paint-list',
   templateUrl: './paint-list.component.html',
-  styleUrls: ['./paint-list.component.scss']
+  styleUrls: ['../list-style.scss']
 })
 export class PaintListComponent implements OnInit, OnDestroy {
 

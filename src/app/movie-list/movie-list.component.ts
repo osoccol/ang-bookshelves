@@ -8,7 +8,7 @@ import { Movie } from '../models/Movie.model';
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+  styleUrls: ['../list-style.scss']
 })
 export class MovieListComponent implements OnInit, OnDestroy {
 

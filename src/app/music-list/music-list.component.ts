@@ -8,7 +8,7 @@ import { Music } from '../models/Music.model';
 @Component({
   selector: 'app-music-list',
   templateUrl: './music-list.component.html',
-  styleUrls: ['./music-list.component.scss']
+  styleUrls: ['../list-style.scss']
 })
 export class MusicListComponent implements OnInit, OnDestroy {
 
